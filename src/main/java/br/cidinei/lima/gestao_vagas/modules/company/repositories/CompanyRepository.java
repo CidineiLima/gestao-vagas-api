@@ -1,6 +1,5 @@
 package br.cidinei.lima.gestao_vagas.modules.company.repositories;
 
-import br.cidinei.lima.gestao_vagas.modules.candidate.CandidateEntity;
 import br.cidinei.lima.gestao_vagas.modules.company.entities.CompanyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -18,12 +18,14 @@ public class CompanyController {
 	private CreateCompanyUseCase createCompanyUseCase;
 
 	@PostMapping("/")
-	public ResponseEntity<Object> create(@Valid @RequestBody CompanyEntity companyEntity){
-		try{
+	public ResponseEntity<Object> create(@Valid @RequestBody CompanyEntity companyEntity) {
+
+		try {
 			var result = this.createCompanyUseCase.execute(companyEntity);
 			return ResponseEntity.ok().body(result);
-		}catch (Exception e){
+		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
+
 }

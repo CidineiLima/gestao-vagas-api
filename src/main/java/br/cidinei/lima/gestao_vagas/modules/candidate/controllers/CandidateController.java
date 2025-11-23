@@ -2,6 +2,7 @@ package br.cidinei.lima.gestao_vagas.modules.candidate.controllers;
 
 import java.util.UUID;
 import br.cidinei.lima.gestao_vagas.modules.candidate.CandidateEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import br.cidinei.lima.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import br.cidinei.lima.gestao_vagas.modules.candidate.useCases.ProfileCandidateUseCase;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,6 +31,7 @@ public class CandidateController {
 	}
 
 	@GetMapping("/")
+	@PreAuthorize("hasRole('CANDIDATE')")
 	public ResponseEntity<Object> get(HttpServletRequest request) {
 		var idCandidate = request.getAttribute("candidate_id");
 
